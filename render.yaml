@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: project-trinity-backend
+    env: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: "4000"
+      - key: MONGODB_URI
+        sync: false # Requires user to set this in the Render dashboard
+      - key: MONGODB_DB
+        value: "project_trinity"
+      - key: HUNTER_API_KEY
+        sync: false
+      - key: ZOHO_CLIENT_ID
+        sync: false
+      - key: ZOHO_CLIENT_SECRET
+        sync: false
+      - key: ZOHO_REFRESH_TOKEN
+        sync: false
+      - key: ACTIVE_CRM
+        value: "zoho"
+      - key: BACKEND_URL
+        value: "https://project-trinity-backend.onrender.com"
+      - key: FRONTEND_URL
+        value: "https://project-trinity.vercel.app"
