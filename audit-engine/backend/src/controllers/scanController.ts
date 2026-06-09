@@ -127,7 +127,7 @@ export async function handleScanRequest(req: Request, res: Response): Promise<vo
     // Enrich the domain
     const enriched = await enrichDomain(domain);
     const contactEmail = enriched.email || email.trim().toLowerCase();
-    const contactName = enriched.first_name ? `${enriched.first_name} ${enriched.last_name || ''}`.trim() : name;
+    const enrichedContactName = enriched.first_name ? `${enriched.first_name} ${enriched.last_name || ''}`.trim() : name;
 
     // Build Mock Signal Object for the scoring algorithm
     const mockSignal = {
@@ -164,7 +164,7 @@ export async function handleScanRequest(req: Request, res: Response): Promise<vo
           name: companyName,
           domain: domain,
           url: `https://${domain}`,
-          contact_name: contactName,
+          contact_name: enrichedContactName,
           email: contactEmail,
           signal_type: 'INBOUND_AUDIT',
           description: leadDescription
@@ -182,7 +182,7 @@ export async function handleScanRequest(req: Request, res: Response): Promise<vo
         url: `https://${domain}`,
         contacts: [
           {
-            name: contactName,
+            name: enrichedContactName,
             emails: [{ email: contactEmail, type: 'office' }],
           },
         ],
