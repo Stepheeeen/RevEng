@@ -19,6 +19,9 @@
   --text-2:    #8a8a8a;
   --text-3:    #444444;
   --white:     #ffffff;
+  
+  /* Brand */
+  --secondary: #f9b970;
 }
 
 /* ─── Base ────────────────────────────────────────────────────────────────── */
@@ -112,7 +115,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .live-dot.active {
-  background: var(--text-1);
+  background: var(--secondary);
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
@@ -337,7 +340,7 @@ h1, h2, h3, h4, h5 {
 
 .nav-item.active {
   background: var(--surface-2);
-  color: var(--text-1);
+  color: var(--secondary);
   font-weight: 500;
   border: 1px solid var(--border-2);
 }

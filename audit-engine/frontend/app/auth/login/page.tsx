@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 const API = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
 
@@ -46,7 +47,8 @@ export default function LoginPage() {
       <div style={{ width: '100%', maxWidth: '360px' }}>
 
         {/* Brand */}
-        <div style={{ marginBottom: '36px' }}>
+        <div style={{ marginBottom: '36px', textAlign: 'center' }}>
+          <Image src="/logo-192x192.png" alt="Flair Technologies" width={64} height={64} style={{ borderRadius: '12px', marginBottom: '16px', display: 'inline-block' }} />
           <div className="section-label" style={{ marginBottom: '12px' }}>Flair Technologies</div>
           <h1 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: '28px', color: 'var(--text-1)', letterSpacing: '-0.01em', margin: 0 }}>
             Staff Access

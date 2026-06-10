@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 const API = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
 
@@ -81,9 +82,12 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const SidebarContent = () => (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       {/* Logo row */}
-      <div style={{ padding: '20px 16px 16px', borderBottom: '1px solid var(--border-1)' }}>
-        <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text-1)', letterSpacing: '0.02em' }}>Project Trinity</div>
-        <div className="section-label" style={{ marginTop: '2px' }}>Intelligence Dashboard</div>
+      <div style={{ padding: '20px 16px 16px', borderBottom: '1px solid var(--border-1)', display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <Image src="/logo-192x192.png" alt="Flair Technologies" width={32} height={32} style={{ borderRadius: '6px' }} />
+        <div>
+          <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text-1)', letterSpacing: '0.02em' }}>Project Trinity</div>
+          <div className="section-label" style={{ marginTop: '2px' }}>Intelligence Dashboard</div>
+        </div>
       </div>
 
       {/* Status */}
