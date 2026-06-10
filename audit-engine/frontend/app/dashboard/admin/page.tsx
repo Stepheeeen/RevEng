@@ -5,9 +5,13 @@ import { useRouter } from 'next/navigation';
 
 const API = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
 
-function useAuthHeaders() {
+function useAuthHeaders(): HeadersInit {
   const token = typeof window !== 'undefined' ? localStorage.getItem('trinity_token') : null;
-  return token ? { Authorization: `Bearer ${token}` } : {};
+  const headers: Record<string, string> = {};
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`;
+  }
+  return headers;
 }
 
 interface StaffUser {

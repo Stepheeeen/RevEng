@@ -25,9 +25,11 @@ function AnimatedNumber({ value }: { value: number }) {
   return <>{display.toLocaleString()}</>;
 }
 
-function useAuthHeaders() {
+function useAuthHeaders(): HeadersInit {
   const token = typeof window !== 'undefined' ? localStorage.getItem('trinity_token') : null;
-  return token ? { Authorization: `Bearer ${token}` } : {};
+  const headers: Record<string, string> = {};
+  if (token) headers['Authorization'] = `Bearer ${token}`;
+  return headers;
 }
 
 export default function DashboardOverviewPage() {

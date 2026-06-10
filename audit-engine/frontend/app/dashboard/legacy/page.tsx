@@ -4,9 +4,11 @@ import React, { useState, useEffect } from 'react';
 
 const API = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
 
-function useAuthHeaders() {
+function useAuthHeaders(): HeadersInit {
   const token = typeof window !== 'undefined' ? localStorage.getItem('trinity_token') : null;
-  return token ? { Authorization: `Bearer ${token}` } : {};
+  const headers: Record<string, string> = {};
+  if (token) headers['Authorization'] = `Bearer ${token}`;
+  return headers;
 }
 
 const ISSUE_LABELS: Record<string, string> = {
