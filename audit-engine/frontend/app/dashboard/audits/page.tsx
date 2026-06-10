@@ -111,7 +111,7 @@ export default function AuditLogsPage() {
                   </td>
                   <td>
                     {a.pdf_url ? (
-                      <a href={`${API}${a.pdf_url}`} target="_blank" rel="noopener noreferrer"
+                      <a href={a.pdf_url} target="_blank" rel="noopener noreferrer"
                         style={{ fontSize: '12px', color: 'var(--text-2)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
                         Download PDF
                       </a>
