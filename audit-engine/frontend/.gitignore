@@ -1,1 +1,5 @@
 .env.local
+.next/
+out/
+build/
+node_modules/

@@ -1,8 +1,0 @@
-{
-  "/_not-found/page": "app/_not-found/page.js",
-  "/scan/page": "app/scan/page.js",
-  "/dashboard/legacy/page": "app/dashboard/legacy/page.js",
-  "/dashboard/dispatch/page": "app/dashboard/dispatch/page.js",
-  "/dashboard/hiring/page": "app/dashboard/hiring/page.js",
-  "/dashboard/admin/page": "app/dashboard/admin/page.js"
-}
