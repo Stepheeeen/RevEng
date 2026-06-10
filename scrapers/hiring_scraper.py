@@ -27,7 +27,11 @@ logging.basicConfig(
 logger = logging.getLogger("HiringScraper")
 
 # Filter Keywords
-FILTER_KEYWORDS = ["software", "engineer", "react", "node", "developer", "backend", "frontend", "fullstack"]
+FILTER_KEYWORDS = [
+    "software", "engineer", "developer", "backend", "frontend", "fullstack", 
+    "react", "node", "ui", "ux", "design", "designer", "digital marketing", 
+    "social media", "ecommerce", "shopify", "integration", "automation", "it support"
+]
 
 # Database configurations
 MONGODB_URI = os.getenv("MONGODB_URI", "mongodb://localhost:27017")
