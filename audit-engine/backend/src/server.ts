@@ -268,6 +268,17 @@ app.post('/api/dispatch', requireAuth, async (_req, res) => {
   }
 });
 
+import { runScrapingPipeline } from './workers/scraperRunner';
+
+app.post('/api/scrape', requireAuth, async (_req, res) => {
+  try {
+    runScrapingPipeline().catch((err) => console.error('Scraping error:', err));
+    res.json({ success: true, message: 'Scraping pipeline triggered successfully.' });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // ─── Global Error Handler ─────────────────────────────────────────────────────
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
   console.error('Unhandled Server Error:', err);
